@@ -1,17 +1,20 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
+    <h1 class="border border-blue-600">{{ msg }}</h1>
+    <p class="border border-black p-6 rounded m-2">
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
         >vue-cli documentation</a
       >.
     </p>
-    <h3>Installed CLI Plugins</h3>
+    <h3 class="text-lg font-bold border-b border-green-600 p-5 m-3">
+      Installed CLI Plugins
+    </h3>
     <ul>
       <li>
         <a
+          class="border rounded border-green-800 bg-green-400 p-2 hover:bg-green-600 text-white"
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
           target="_blank"
           rel="noopener"
@@ -20,6 +23,7 @@
       </li>
       <li>
         <a
+          class="border inline-flex justify-center items-center rounded-full border-green-800 bg-green-400 w-16 h-16 hover:bg-green-600 text-white"
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
           target="_blank"
           rel="noopener"
@@ -87,6 +91,7 @@
 </template>
 
 <script>
+import "tailwindcss/tailwind.css";
 export default {
   name: "HelloWorld",
   props: {

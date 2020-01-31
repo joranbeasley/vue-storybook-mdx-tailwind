@@ -11,6 +11,20 @@ module.exports = {
   // Modify webpack to remove babel-preset-vue from .mdx loaders
   webpack: async config => {
     const rules = config.module.rules;
+    rules.push({
+            test: /\\.css$/,
+            use: [
+                // Loader for webpack to process CSS with PostCSS
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        sourceMap: true,
+                        config: {
+                            path: './'
+                        }
+                    }
+                }]
+        });
     const mdxRules = rules.filter(
       filterRules([/\.mdx$/, /\.(stories|story).mdx$/])
     );
